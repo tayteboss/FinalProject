@@ -1,0 +1,521 @@
+/* QUESTIONS */
+
+
+/* artists page using toggle */
+/* menu bar */
+/* making nav work */
+
+
+
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    font-size: 16px;
+    background-color: #BFBDB6;
+}
+
+#bgImage {
+    min-height: 100%;
+    min-width: 500px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+
+
+
+/* NAV */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    position: relative;
+    margin: 80px;
+}
+
+.logoWrap {
+    position: relative;
+}
+
+nav img {
+    width: 140px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: #EFEEEA;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.438em;
+    line-height: 35px;
+}
+
+
+
+
+/* STRIKE THROUGH ANIMATION */
+
+.navBar a:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 0px;
+    background: white;
+    height: 2px;
+    bottom: -19px;
+    margin-top: 0px;
+    transition: width 0.5s ease;
+}
+
+.navBar a:nth-child(1):not(.noHover):hover:before {
+    width: 58px;
+}
+.navBar a:nth-child(2):not(.noHover):hover:before {
+    width: 55px;
+}
+.navBar a:nth-child(3):not(.noHover):hover:before {
+    width: 57px;
+}
+.navBar a:nth-child(4):not(.noHover):hover:before {
+    width: 67px;
+}
+
+
+
+
+
+
+.navBar a:hover {
+    color: #fff;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.438em;
+    line-height: 35px;
+}
+
+.navBar .navContact {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.938em;
+    font-weight: 200;
+    transition: color 0.5s;
+}
+
+.navBar .navContact:hover {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.938em;
+    font-weight: 200;
+    color: #fff;
+}
+
+.soundcloudLink {
+    color: #F3F1EE;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.938em;
+    font-weight: 100;
+    margin: 0;
+    transition: color 0.5s;
+}
+
+.soundcloudLink:hover {
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.875em;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+/* ACTIVE NAV */
+
+a.activeNavabout {
+    color: #fff;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.438em;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+}
+
+a.activeNavabout:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 58px;
+    background: white;
+    height: 2px;
+    bottom: -19px;
+    margin-top: 0px;
+}
+
+a.activeNavartist {
+    color: #fff;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.438em;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+}
+
+a.activeNavartist:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 55px;
+    background: white;
+    height: 2px;
+    bottom: -19px;
+    margin-top: 0px;
+}
+
+a.activeNavspace {
+    color: #fff;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.438em;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+}
+
+a.activeNavspace:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 57px;
+    background: white;
+    height: 2px;
+    bottom: -19px;
+    margin-top: 0px;
+}
+
+
+
+
+
+
+/* MAIN */
+
+main {
+    position: relative;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-width: 650px;
+    margin-right: 30px;
+}
+
+.mainArtist {
+    display: none;
+}
+
+.mainSpace {
+    display: none;
+}
+
+main .highlight {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.938em;
+    font-weight: 200;
+    opacity: 0;
+}
+
+main .highlight a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.938em;
+    font-weight: 200;
+    margin: 0;
+    transition: color 0.5s;
+}
+
+main .highlight a:hover {
+    color: #F3F1EE;
+}
+
+.pipe {
+    margin: 0px 7px;
+}
+
+main h1 {
+    font-size: 1.875em;
+    line-height: 1.3em;
+    font-weight: 200;
+    font-family: 'Vollkorn', serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    margin: 6px 0px;
+    opacity: 0;
+}
+
+.h1Faded {
+    font-size: 1em;
+    line-height: 1.3em;
+    font-weight: 200;
+    font-family: 'Vollkorn', serif;
+    color: #F3F1EE;
+    -webkit-font-smoothing: antialiased;
+    margin: 6px 0px;
+}
+
+main p {
+    font-size: 0.938em;
+    line-height: 1.9em;
+    font-weight: 200;
+    font-family: 'Lato', sans-serif;
+    color: #F9F8F7;
+    margin: 0;
+}
+
+artistSound {
+    display: block;
+}
+
+artistSoundOff {
+    display: none;
+}
+
+.artistVisual {
+    display: none;
+}
+
+.artistVisualOn {
+    display: block;
+}
+
+.buttonAbout {
+    font-size: 1.250em;
+    font-weight: 200;
+    font-family: 'Vollkorn', serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+.buttonAbout:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 0px;
+    background: white;
+    height: 2px;
+    bottom: -15px;
+    left: -1px;
+    margin-top: 0px;
+    transition: width 0.5s ease;
+}
+
+.buttonAbout:hover:before {
+    width: 90px;
+    background: white;
+}
+
+.buttonSpace {
+    font-size: 1.250em;
+    font-weight: 200;
+    font-family: 'Vollkorn', serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    margin-top: 35px;
+}
+
+.buttonSpace:before {
+    content: ' ';
+    display: block;
+    position: relative;
+    width: 0px;
+    background: white;
+    height: 2px;
+    bottom: -16px;
+    margin-top: 0px;
+    transition: width 0.5s;
+}
+
+.buttonSpace:hover:before {
+    width: 125px;
+    background: white;
+}
+
+article p {
+    margin-bottom: 10px;
+}
+
+.secButton {
+    font-size: 0.938em;
+    font-weight: 200;
+    font-family: 'Lato', sans-serif;
+    color: #F9F8F7;
+    margin-top: 1px;
+    margin-bottom: 19px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1s ease-in 1050ms;
+    transition: color 0.5s ease;
+}
+
+.secButton:hover {
+    color: #fff;
+}
+
+.secButton:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 13px;
+    background: white;
+    height: 1px;
+    top: 9px;
+    left: -21px;
+    transition: .25;
+    margin-top: 1px;
+}
+
+
+
+
+.delay-2000 {
+    transition: opacity 1s 2000ms;
+}
+.navBar .delay-1800, .delay-1800 {
+    transition: opacity 1s 1800ms;
+}
+.delay-1600 {
+    transition: opacity 1s 1600ms;
+}
+.delay-1400 {
+    transition: opacity 1s 1400ms;
+}
+.delay-1200 {
+    transition: opacity 1s 1200ms;
+}
+.delay-1000-width {
+    transition: width 0.5s 1000ms;
+}
+.delay-1000 {
+    transition: opacity 1s 1000ms;
+}
+.delay-800 {
+    transition: opacity 1s 800ms;
+}
+.delay-600 {
+    transition: opacity 1s 600ms;
+}
+.delay-400 {
+    transition: opacity 1s 400ms;
+}
+.delay-200 {
+    transition: opacity 1s 200ms;
+}
+
+.animate {
+    opacity: 0;
+}
+
+.animate.make-visible {
+   opacity: 1;
+}
+
+.logoAnimate {
+    position: absolute;
+    width: 0px;
+    background: white;
+    height: 2px;
+    top: 12px;
+}
+
+.logoAnimate.make-width {
+    width: 47px;
+}
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 700px) {
+    nav {
+        margin-right: 40px;
+    }
+}    
+
+
+
+
+@media screen and (max-width: 630px) {
+    main {
+        position: absolute;
+        display: inline-block;
+        width: 80%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 60px;
+        height: 100vh;
+        margin-top: 120px;
+    }
+
+    main p {
+        margin-bottom: 24px;
+    }
+
+    main .highlight {
+        margin: 0;
+    }
+
+    nav a {
+        visibility: hidden;
+    }
+
+    nav {
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+} 
+
+
+
+@media screen and (max-width: 380px) {
+    main {
+        width: 80%;
+        margin: 125px 0px 0px 40px;
+    }
+
+    main h1 {
+        font-size: 1.600em;
+        line-height: 1.35em;
+    }
+
+    main .highlight, main .highlight a {
+        font-size: 0.9em;
+    }
+
+    nav {
+        margin: 60px 0px 0px 40px;
+    }
+}
+
